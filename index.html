@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de alumnos</title>
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Palanquin+Dark:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row w-100">
+                    <div class="col-12">
+                        <h2>Hola Profe!</h2>
+                        <p>Da de alta a tus alumnos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="form card">
+                        <form>
+                            <input type="text" placeholder="Nombre" id="firstName" required>
+                            <input type="text" placeholder="Apellido" id="lastName" required>
+                            <input type="number" id="age" placeholder="Edad" required>
+                            <label>
+                                Selecciona una de las materias para inscribirlo
+                            <select id="assignment">
+                                <option value="" disabled="disabled">Mis materias</option>
+                                <option value="matematicas">Matemáticas</option>
+                                <option value="ingles">Inglés</option>
+                                <option value="física">Física</option>
+                            </select>
+                        </label>
+                            <input type="number" placeholder="Calificación" id="score">
+                        </form>
+                        <button type="button" id="submit" onclick="addStudent()">Agregar</button>
+                        <p id="message"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>Tus alumnos inscritos</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Apellido</td>
+                                    <td>Edad</td>
+                                    <td>Materia</td>
+                                    <td>Calificacion</td>
+                                </tr>
+                            </thead>
+                            <tbody id="studentsList">
+                                <tr>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/classes.js"></script>
+</body>
+
+</html>
