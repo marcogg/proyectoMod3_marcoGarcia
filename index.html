@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -23,10 +23,10 @@
     <main>
         <section>
             <div class="container">
-                <div class="row w-100">
+                <div class="row">
                     <div class="col-12">
-                        <h2>Hola Profe!</h2>
-                        <p>Da de alta a tus alumnos</p>
+                        <h2 class="text-white">Hola Profe!</h2>
+                        <p class="text-white">Da de alta a tus alumnos</p>
                     </div>
                 </div>
             </div>
@@ -56,13 +56,36 @@
         </section>
         <section>
             <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h4>Tus alumnos inscritos</h4>
+                <div class="row w-100">
+                    <div class="col-6">
+                        <div class="row w-100 align-items-center">
+                            <form>
+                                <label>Buscar por nombre
+                                    <input type="text" id="searchInput">
+                                </label>
+                            </form>
+                            <button onclick="searchByName()">Buscar</button>
+                            <p id="messageSearchByName"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row w-100 align-items-center">
+                            <form>
+                                <label>Buscar por apellido
+                                    <input type="text" id="searchInputLast">
+                                </label>
+                            </form>
+                            <button onclick="searchByLast">Buscar</button>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row w-100 align-items-center">
                     <div class="col-12">
+                        <h4 class="text-left text-white">Tus alumnos inscritos</h4>
+                    </div>
+                </div>
+                <div class="row w-100 justify-content-center card">
+                    <div class="col-12 col-md-12 col-lg-12">
                         <table>
                             <thead>
                                 <tr>
@@ -71,18 +94,50 @@
                                     <td>Edad</td>
                                     <td>Materia</td>
                                     <td>Calificacion</td>
+                                    <td>Promedio</td>
+                                    <td>Editar</td>
                                 </tr>
                             </thead>
                             <tbody id="studentsList">
-                                <tr>
-                                </tr>
+                                <!-- dynamic students -->
                             </tbody>
                         </table>
                     </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <table>
+                                <tr>
+                                    <td colspan="5"></td>
+                                    <td><button id="getAvgGroup">Obtener promedio grupal</button></td>
+                                    <td>
+                                        <p id="average"></p>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                            </table>
 
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
+        <div class="modal-container">
+            <div id="modal" class="modal">
+                <div class="row w-100 justify-content-center">
+                    <div class="modalBox">
+                        <div class="col-2 flex-end">
+                            <p id="closeModal" class="close">Cerrar</p>
+                        </div>
+                        <div class="col-12">
+                            <table id="results" class="mt-5">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="./js/classes.js"></script>
 </body>
