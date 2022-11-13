@@ -12,11 +12,8 @@ class Student {
         this.score = score
         this.edit = edit
     }
-
-
-
-
 }
+
 
 // Create new student in table
 const printTable = (firstName, lastName, age, assignment, score, edit) => {
@@ -65,11 +62,15 @@ const localSave = (fnAdd) => {
 
 // Students average
 const average = (arr) => {
-    for (let num in arr.score) {
-        let sum = 0
-        let total = sum += arr[num].score
-        let getRes = document.querySelector('#average')
-        return getRes.innerHTML = total / arr.score.length
+    for (let i = 0; i < arr.length; i++) {
+        if (Object.hasOwnProperty('score')) {
+            let sum = 0
+            let total = sum += Number(arr[i].score)
+            console.log(total)
+            let getRes = document.querySelector('#average')
+            return getRes.innerHTML = total / arr.length
+        }
+
     }
 
 
@@ -186,9 +187,54 @@ const addStudent = () => {
 
 }
 
-// const loadStored = () => {
-//     for ()
-//     localStorage.getItem()
-// }
+// Calling to average group
+let btnAvgGroup = document.querySelector('#getAvgGroup')
+btnAvgGroup.addEventListener('click', average(students))
 
-// document.addEventListener('DOMContentLoaded', loadStored())
+
+// Getting data from local storage
+// document.addEventListener('DOMContentLoaded', function (){
+//     let getLocalData = localStorage.getItem(student)
+//     for (student in getLocalData){
+//         student[index]
+//     }
+
+//     });
+//     if (searchInput == students[i].firstName) {
+//         // console.log(students[i])
+//         let modalContainer = document.querySelector('.modal-container')
+//         modalContainer.style.display = 'flex'
+//         let getTable = document.querySelector('#results')
+//         let result = document.createElement('tr')
+//         result.innerHTML = `
+//         <td>${students[i].firstName}</td>
+//         <td>${students[i].lastName}</td>
+//         <td>${students[i].age}</td>
+//         <td>${students[i].assignment}</td>
+//         <td>${students[i].score}</td>
+//         `
+//         getTable.appendChild(result)
+// })
+
+
+
+// Loading Data from local storage
+const loadStored = (storedArr) => {
+    for (let i = 0; i < storedArr.length; i++) {
+        let getTable = document.getElementById('studentsList')
+        let newRow = document.createElement('tr')
+        newRow.innerHTML = `
+        <td>${storedArr[i].firstName}</td>
+        <td>${storedArr[i].lastName}</td>
+        <td>${storedArr[i].age}</td>
+        <td>${storedArr[i].assignment}</td>
+        <td>${storedArr[i].score}</td>
+        `
+        getTable.appendChild(newRow)
+    }
+
+
+}
+
+// Calling local storage to bring data on page load
+document.addEventListener('DOMContentLoaded', loadStored(JSON.parse(localStorage.getItem('student'))))
