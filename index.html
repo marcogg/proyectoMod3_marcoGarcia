@@ -59,23 +59,23 @@
                 <div class="row w-100">
                     <div class="col-6">
                         <div class="row w-100 align-items-center">
-                            <form>
+                            <form class="search">
                                 <label>Buscar por nombre
                                     <input type="text" id="searchInput">
                                 </label>
                             </form>
-                            <button onclick="searchByName()">Buscar</button>
+                            <button class="mt-6" onclick="searchByName()">Buscar</button>
                             <p id="messageSearchByName"></p>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="row w-100 align-items-center">
-                            <form>
+                            <form class="search">
                                 <label>Buscar por apellido
                                     <input type="text" id="searchInputLast">
                                 </label>
                             </form>
-                            <button onclick="searchByLast">Buscar</button>
+                            <button class="mt-6" onclick="searchByLast()">Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,20 @@
                         <h4 class="text-left text-white">Tus alumnos inscritos</h4>
                     </div>
                 </div>
-                <div class="row w-100 justify-content-center card">
+                <div class="row align-items-center w-100 justify-content-center card">
+                    <div class="col-6">
+                        <div class="row align-items-center">
+                            <button class="flex-end" id="getAvgGroup">Obtener promedio grupal</button>
+                            <p id="average" class="mx-5 fs-2"></p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row justify-content-space-around align-items-center">
+                            <p onclick="sortDecreasing()" id="decreasing">De mayor a menor</p>
+                            <p onclick="sortIncreasing()" id="increasing">De menor a mayor</p>
+                        </div>
+
+                    </div>
                     <div class="col-12 col-md-12 col-lg-12">
                         <table>
                             <thead>
@@ -94,7 +107,7 @@
                                     <td>Edad</td>
                                     <td>Materia</td>
                                     <td>Calificacion</td>
-                                    <td>Promedio</td>
+                                    <!-- <td>Promedio</td> -->
                                     <td>Editar</td>
                                 </tr>
                             </thead>
@@ -103,13 +116,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-12">
-                        <div class="row">
-                            <button class="flex-end" id="getAvgGroup">Obtener promedio grupal</button>
-                            <p id="average"></p>
-                        </div>
 
-                    </div>
                 </div>
             </div>
         </section>

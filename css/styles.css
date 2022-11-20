@@ -55,6 +55,12 @@ label {
     color: purple;
 }
 
+.search label {
+    font-family: 'Mulish', sans-serif;
+    font-size: 12px;
+    color: white;
+}
+
 .form {
     display: flex;
     width: 300px;
@@ -127,6 +133,10 @@ td {
     justify-content: center;
 }
 
+.justify-content-space-around {
+    justify-content: space-around;
+}
+
 .text-left {
     text-align: left;
 }
@@ -144,7 +154,7 @@ td {
     width: 100vw;
     height: 100vh;
     z-index: 3;
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     display: none;
@@ -166,7 +176,7 @@ td {
     font-weight: bold;
     position: relative;
     top: 15px;
-    left: 364px;
+    left: 290px;
     float: right;
 }
 
@@ -176,6 +186,18 @@ td {
 
 .mt-5 {
     margin-top: 5%;
+}
+
+.mt-6 {
+    margin-top: 6%;
+}
+
+.mx-5 {
+    margin: 0 5%;
+}
+
+.fs-15 {
+    font-size: 1.5rem;
 }
 
 table#results {
